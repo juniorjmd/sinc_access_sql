@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
@@ -43,7 +44,19 @@ namespace siigo
 
                         AplicarMigracion();
                     }
-                    catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                    catch (Exception ex) { Console.WriteLine(ex.ToString());
+                        string toEnd = "";
+                        while (toEnd.ToUpper() != "Y" && toEnd.ToUpper() != "N")
+                        {
+                            Console.WriteLine(CadenaFormateada("¿Desea reiniciar el proceso  (Y/N) ?"));
+                            toEnd = Console.ReadLine();
+                        }
+                        if (toEnd.ToUpper() == "Y") { 
+                         GenerarMigracion();
+
+                        AplicarMigracion();
+                        }
+                    }
                 }
             }
             else {
@@ -674,8 +687,7 @@ namespace siigo
                 int datosEnDestino = 0;
                 // OleDbDataReader dr_tabla_colum = this._conn.GetColumnasTabla(NameTable);
 
-
-
+               
                 OleDbDataReader dr_tabla = this._conn.DataReader(TablaConsulta.GetNameTableOrigen());
 
                 if (valTabla.ExistInDestinity)

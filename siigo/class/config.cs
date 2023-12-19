@@ -36,17 +36,21 @@ namespace siigo
             Url = "";
             UserDataBase = "sa";
             PassDataBase = "123456789";
-            NameDataBase = "migracionCT";
+         //   NameDataBase = "migracionCT";
+            NameDataBase = "controlTotalDiciembre";
             AxUserDataBase = "jdpsoluc_africanas_user";
             AxPassDataBase = "Qazwsxedc345*";
             AxNameDataBase = "jdpsoluc_africanas_1";
             TipoDestino = "MMSQL";
-            UrlPad = @"D:\jdpSincAccessDatabase\";
+          //  UrlPad = @"D:\jdpSincAccessDatabase\"; 
+            UrlPad = @"D:\sincNuevoJdsCT\"; 
             PrefijoTabla = "";
-            PathAccessDataBase = @"D:\creacion remisiones continental\PRINCIPAL\";
+            PathAccessDataBase = @"C:\Users\junio\source\repos\CT-jds.net\assets\ContolTotalAccessDB\";
             // PathAccessDataBase = @"D:\creacion remisiones continental\PRINCIPAL\";
-            NameAccessDataBase = "DatosPCn";
+            //NameAccessDataBase = "ControlDBP1";
+            NameAccessDataBase = "ControlDBP1";
             ExtAccessDataBase = "mdb";
+            //ExtAccessDataBase = "accdb";
             DSAccessDataBase = PathAccessDataBase+ NameAccessDataBase+'.'+ ExtAccessDataBase; 
 
         }
